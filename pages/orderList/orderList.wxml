@@ -1,0 +1,26 @@
+<view class='order-list' wx:for='{{list}}' wx:key=''>
+    <view class='v-header'>
+        <text class='col-1'>下单时间</text>
+        <text class='col-2'>{{item.ctime}}</text>
+        <text class='col-3'>{{item.type_name}}</text>
+    </view>
+    <view class='v-bodyer'>
+        <view class='row'>
+            <text class='col-1'>支付金额</text>
+            <text class='col-2'>{{item.amount}}元</text>
+        </view>
+        <view class='row'>
+            <text class='col-1'>购买数量</text>
+            <text class='col-2'>{{item.num}}套</text>
+        </view>
+        <view class='row'>
+            <text class='col-1'>邮寄地址</text>
+            <text class='col-2'>{{item.useraddressareainfo}}</text>
+        </view>
+        <view class='row' wx:if='{{item.type==3}}'>
+            <text class='col-1'>快递单号</text>
+            <text class='col-2'>{{item.tracknumber}}</text>
+        </view>
+        <image class='delete' data-index='{{index}}' data-orderid='{{item.id}}' mode='widthFix' catchtap='delete' src='../images/icon-delete.png'></image>
+    </view>
+</view>

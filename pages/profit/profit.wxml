@@ -1,0 +1,26 @@
+<view class='section-bg'>
+    <view class='item'>
+        <text class='row1'>累计收益(元)</text>
+        <text class='row2'>{{balance}}</text>
+    </view>
+     <view class='btns'>
+        <view class='btn' catchtap='save'>申请提现</view>
+    </view> 
+</view>
+
+
+<!-- <view class='profit-list'>
+    <view class='p-title'>收益明细</view>
+    <view class='list'>
+        <view class='col-1'>邀请好友138****5678</view>
+        <view class='col-2'>8.88元</view>
+    </view>
+    <view class='list'>
+        <view class='col-1'>邀请好友138****5678</view>
+        <view class='col-2'>8.88元</view>
+    </view>
+    <view class='list'>
+        <view class='col-1'>邀请好友138****5678</view>
+        <view class='col-2'>8.88元</view>
+    </view>
+</view> -->

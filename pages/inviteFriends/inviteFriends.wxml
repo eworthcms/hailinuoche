@@ -1,0 +1,46 @@
+<image mode='widthFix' class='bg1' src='../images/bg1.jpg'></image>
+
+<view class='section-bg'>
+    <image class='bg' mode='widthFix' src='../images/bg2.png'></image>
+    <view class='guize' catchtap='linkGuize'>点击查看<text class='s1'>《活动规则》</text></view>
+</view>
+
+<view class='section-btns'>
+       <button class='btn' catchtap='showModal'>立即赚赏金</button>
+</view>
+
+ <view class='cont-list'>
+    <view class='list' catchtap='linkProfit'>
+        <view class='col-1'><image mode='widthFix' src='../images/icon-mony.png'></image></view>
+        <view class='col-2'>我的收益</view>
+        <view class='col-3'><image mode='widthFix' src='../images/icon-arrow1.png'></image></view>
+    </view>
+</view> 
+
+
+<view class='modal' hidden='{{isshow}}'>
+    <text class='mask'></text>
+    <view class='cont'>
+        <image class='close' mode='widthFix' src='../images/icon-close.png' catchtap='closeModal'></image>
+        <!-- <view class='h1'>分享并邀请用户使用微信扫码并购买即可赚得赏金，赏金上不封顶。</view> -->
+        <view class='codeimg'><image mode='widthFix' src='{{codeurl}}'></image></view>
+        <view class='btns'>
+            <button class='btn' catchtap='saveImg'>保存到相册</button> 
+            <button class='btn' open-type="share">推荐给朋友</button>
+        </view>
+    </view>
+</view>
+
+<!-- <view class='cont-list'>
+    <view class='list' catchtap='linkProfit'>
+        <view class='row-1'>
+            <text class='s1'>2</text>
+            <text class='s2'>元赏金已到手</text>
+        </view>
+        <view class='row-2'>
+            <text class='s1'>0.00</text>
+            <text class='s2'>元赏金在路上，0.00元可提现</text>
+        </view>
+        <image mode='widthFix' class='arrow' src='../images/icon-arrow1.png'></image>
+    </view>
+</view> -->

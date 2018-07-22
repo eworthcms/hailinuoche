@@ -1,0 +1,27 @@
+<view class='section-cont1'>
+    <view class='header'>车辆信息</view>
+    <view class='bodyer'>
+        <view class='row1'>
+            <view class='province' catchtap='showProvince'>{{province}}</view>
+            <input placeholder="请输入车牌号" placeholder-class="placeholder" focus bindinput='setCarNumber'/>
+        </view>
+        <view class='row2'>绑定电话</view>
+        <view class='row3'>挪车将通知您微信绑定的手机号{{phoneNumber}}</view>
+    </view>
+</view>
+
+<view class='btns'>
+    <view class='btn' catchtap='save' wx:if='{{!isjihuo}}'>确认生成</view>
+    <view class='btn' catchtap='saveJihuo' wx:if='{{isjihuo}}'>激活挪车码</view>
+</view>
+
+<view class='cont-customer-telephone'>
+    客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='18514820511'><text>185</text>14820511</text>
+</view>
+
+<view class='province-action' wx:if='{{show}}'>
+    <view class='bodyer'>
+        <view class='list' hover-class="hover-bgcolor" wx:for='{{provincename}}' wx:key='' data-province='{{item}}' catchtap='selectProvince'>{{item}}</view>
+        <text class='list list-hide' catchtap='hideProvince'>隐藏</text>
+    </view>
+</view>

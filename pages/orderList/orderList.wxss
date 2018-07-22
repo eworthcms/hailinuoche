@@ -1,0 +1,10 @@
+.order-list{ background-color: #fff; margin-top: 30rpx; margin-bottom: 30rpx; padding: 0 0 0 30rpx }
+.order-list .v-header{ display: flex; align-items: center; padding: 20rpx 30rpx 20rpx 0; border-bottom: solid 1rpx #eee;}
+.order-list .v-header .col-1{ color: #000; font-size: 30rpx; margin-right: 40rpx; }
+.order-list .v-header .col-2{ color: #000; font-size: 30rpx; flex: 1; }
+.order-list .v-header .col-3{ color: #f14a5e; font-size: 28rpx; }
+.order-list .v-bodyer{ padding: 20rpx 0; position: relative; }
+.order-list .v-bodyer .row{ display: flex; align-items: center; padding: 10rpx 30rpx 10rpx 0; font-size: 28rpx; }
+.order-list .v-bodyer .col-1{ color: #b2b2b2; margin-right: 40rpx; }
+.order-list .v-bodyer .col-2{ color: #030303; flex: 1; }
+.order-list .v-bodyer .delete{ position: absolute; top: 30rpx; right: 30rpx; width: 40rpx; }

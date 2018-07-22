@@ -1,0 +1,13 @@
+<view class='cont-list' wx:for='{{codeList}}' wx:key='' data-carcodeid='{{item.id}}' catchtap='linkExperienceCode'>
+    <view class='list'>
+        <view class='col-1'><image mode='widthFix' src='{{item.codeurl}}'></image></view>
+        <view class='col-2'>
+            <view class='row1'>
+                <text class='s1'>{{item.licenseplate}}</text>
+                <text class='s2'>体验码</text>
+            </view>
+            <view class='row2'>绑定手机： {{item.mobile}}</view>
+        </view>
+        <view class='col-3'><image mode='widthFix' src='../images/icon-arrow1.png'></image></view>
+    </view>
+</view>

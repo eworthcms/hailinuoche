@@ -1,0 +1,20 @@
+<view class='section-1'>
+    <view class='row1'>挪车体验码</view>
+    <view class='row2'>注：此二维码仅作为体验使用</view>
+    <view class='row-qrcode'><image mode='widthFix' src='{{codeUrl}}'></image></view>  
+</view>
+
+<view class='btns'>
+    <view class='btn' catchtap='applyPost'>申请邮寄</view>
+</view>
+
+<view class='section-2'>您将收到一套精美挪车贴，按照说明书绑定即可使用</view>
+
+<view class='btns'>
+    <view class='btn btn0' catchtap='deleteCode'>删除体验码</view>
+</view>
+
+<view class='cont-customer-telephone'>
+    客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='18514820511'><text>185</text>14820511</text>
+</view>
+

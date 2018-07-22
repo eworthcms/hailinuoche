@@ -1,0 +1,22 @@
+<view class='section-bg'>
+    <image class='bg' mode='widthFix' src='../images/banner4.png'></image>
+</view>
+
+<view class='section-cont1'>
+    <view class='s-header'>京AAA888</view>
+    <view class='s-bodyer'>
+        <text class='text'>违章 0</text>
+        <text class='text'>罚款 0</text>
+        <text class='text'>扣分 0</text>
+    </view>
+</view>
+
+<view class='section-cont2'>
+    <view class='btn' catchtap='linkAddCar'>+ 添加车辆</view>
+</view>
+
+<view class='section-cont3'>每周2、周5自动推送违章情况</view>
+
+<view class='section-cont4'>
+    <view class='btn' catchtap='save'>违章实时提醒 100元/年</view>
+</view> 

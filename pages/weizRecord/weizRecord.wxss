@@ -1,0 +1,17 @@
+.section-cont1{ background-color: #fff; display: flex; align-items: center; font-size: 34rpx; padding: 30rpx 20rpx; border-bottom: solid 1rpx #eee; }
+.section-cont1 image{ width: 40rpx; margin-right: 10rpx; }
+
+.section-tabs{ display: flex; align-items: stretch; height: 92rpx; line-height: 90rpx; background-color: #fafafa; font-size: 28rpx;
+color:#353535; box-shadow:inset 0 -1px 0 0 #e5e5e5; }
+.section-tabs .tab{ flex: 1; text-align: center; position: relative; }
+.section-tabs .tab.active{ color: #1075c1; }
+.section-tabs .tab.active::after{ content: ""; display: block; position: absolute; bottom: 0; left: 30rpx; right: 30rpx; height: 6rpx; background-color: #1075c1; }
+
+.section-tabscont{ background-color: #fff; }
+.section-tabscont .cont{ padding: 18rpx 0; border-top: solid 1rpx #e5e5e5; }
+.section-tabscont .cont:nth-child(1){ border-top: 0; }
+.section-tabscont .list{ display: flex; font-size: 28rpx; padding: 10rpx 40rpx; }
+.section-tabscont .list .s2{ flex: 1; margin-left: 10rpx; }
+.section-tabscont .list .s3{ display: inline-block; margin-left: 55rpx; }
+
+.section-nodata{ padding: 100rpx 0 40rpx; text-align: center; font-size: 28rpx; color: #999; }

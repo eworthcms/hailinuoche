@@ -1,0 +1,60 @@
+<view class='section-1'>
+    <view class='view-cont'>
+        <view class='left'></view>
+        <view class='right'>
+            <text class='row1'>喊你挪车-隐私挪车贴</text>
+            <text class='row2'>全新静电贴安装</text>
+            <text class='row3'>￥25.9</text>
+        </view>
+    </view>
+    <view class='view-cell'>
+        <view class='list'>
+            <view class='col-1'>购买数量</view>
+            <view class='col-2'>
+                <view class='chooseNumber'>
+                    <text class='btn reduce' catchtap='reduce'>-</text>
+                    <input disabled="true" value='{{buyNumber}}' style='text-align:center;'/>
+                    <text class='btn add' catchtap='add'>+</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='section-2'>
+
+    <view class='view-cell view-post'>
+        <view class='list'>
+            <view class='col-1'>配送方式</view>
+            <view class='col-2'>快递运输</view>
+        </view>
+    </view>
+
+    <view class='view-address' catchtap='chooseAddress'>
+        <view class='noAddress' wx:if='{{!hasAddress}}'>请选择邮寄地址</view>
+        <block wx:if='{{hasAddress}}'>
+            <view class='row1'>
+                <text class='col-1'>{{userName}}</text>
+                <text class='col-2'>{{telNumber}}</text>
+            </view>
+            <view class='row2'>{{address}}</view>
+        </block>
+        <image class='icon-arrow' mode='widthFix' src='../images/icon-arrow1.png'></image>
+    </view>
+
+    <view class='view-cell view-payway'>
+        <view class='list'>
+            <view class='col-1'>支付方式</view>
+            <view class='col-2'>
+                <image class='icon-weixin' mode='widthFix' src='../images/icon-weixin-pay.jpg'></image>
+                <text class='text'>微信支付</text>
+            </view>
+        </view>
+    </view>
+    
+</view>
+
+<view class='footer-btns'>
+    <text class='price'>服务费：{{totalPrice}}元</text>
+    <text class='btn' catchtap='createorder'>立即申请</text>
+</view>

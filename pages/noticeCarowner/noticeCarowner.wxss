@@ -1,0 +1,22 @@
+
+.banner{ background-color: #1075c1; color: #fff; position: relative; }
+.banner .bgimg{ width: 100%; }
+.banner .left{ position: absolute; left: 40rpx; top: 120rpx; }
+.banner .left text{ display: block; }
+.banner .left .row1{ font-size: 50rpx; }
+.banner .left .row2{ font-size: 32rpx; }
+.banner .right image{ display: block; width: 120rpx; }
+
+.section-1{ text-align: center; padding: 50rpx 0 0px; }
+.section-1 .text{ display: inline-block; padding: 8rpx 40rpx; background-color: #1075c1; color: #fff; font-size: 32rpx; }
+
+.section-btns{ text-align: center; }
+.section-btns .section-tips{ text-align: left; color: #333; font-size: 30rpx; padding: 40rpx 40rpx 50rpx; width: 100%; box-sizing: border-box; }
+.section-btns .btn{ display: inline-block; width: 60%; height: 90rpx; line-height: 90rpx; background-color: #1075c1; color: #fff; border-radius: 200rpx; font-size: 36rpx; }
+
+
+.section-jihuo{ text-align: center; }
+.section-jihuo .section-tips{ color: #ff0000; font-size: 30rpx; padding: 80rpx 40rpx 30rpx; width: 100%; box-sizing: border-box; }
+.section-jihuo .btn{ display: inline-block; width: 60%; height: 90rpx; line-height: 90rpx; background-color: #1075c1; color: #fff; border-radius: 200rpx; font-size: 36rpx; }
+
+.cont-customer-telephone{ text-align: center; color: #555; font-size: 28rpx; position: absolute; bottom: 0; width: 100%; padding: 0 0 50rpx; box-sizing: border-box; }

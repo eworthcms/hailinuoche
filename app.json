@@ -1,0 +1,51 @@
+{
+    "pages":[
+        "pages/index/index",
+        "pages/me/me",
+        "pages/experienceCode/experienceCode",
+        "pages/bindCarnumber/bindCarnumber",
+        "pages/reciveWay/reciveWay",
+        "pages/weizSearch/weizSearch",
+        "pages/weizRecord/weizRecord",
+        "pages/inviteFriends/inviteFriends",
+        "pages/sjGuize/sjGuize",
+        "pages/problemList/problemList",
+        "pages/profit/profit",
+        "pages/orderList/orderList",
+        "pages/noticeCarowner/noticeCarowner",
+        "pages/codeList/codeList"
+    ],
+    "window":{
+        "backgroundTextStyle":"light",
+        "navigationBarBackgroundColor": "#ffd700",
+        "navigationBarTitleText": "喊你挪车",
+        "navigationBarTextStyle":"black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#3f270b",
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "selectedIconPath": "pages/images/nav-index-active.png",
+                "iconPath": "pages/images/nav-index.png",
+                "pagePath": "pages/index/index",
+                "text": "挪车码"
+            },
+            {
+                "selectedIconPath": "pages/images/nav-shangjin-active.png",
+                "iconPath": "pages/images/nav-shangjin.png",
+                "pagePath": "pages/inviteFriends/inviteFriends",
+                "text": "赚赏金"
+            },
+            {
+                "selectedIconPath": "pages/images/nav-me-active.png",
+                "iconPath": "pages/images/nav-me.png",
+                "pagePath": "pages/me/me",
+                "text": "我的"
+            }
+        ]
+    },
+    "debug": true
+}

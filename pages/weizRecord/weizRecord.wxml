@@ -1,0 +1,59 @@
+
+<view class='section-cont1'>
+        <image class='car' mode='widthFix' src='../images/icon-car.png'></image>
+        <text>京AAA888</text>
+</view>
+
+<view class='section-tabs'>
+    <text class='tab {{tabindex==index?"active":""}}' wx:for='{{tabs}}' wx:key='' data-index='{{index}}' catchtap='highLight'>{{item}}</text>
+</view>
+
+<view class='section-tabscont'>
+    <view class='cont'>
+        <view class='list'>
+            <text class='s1'>罚款数额：</text>
+            <text class='s2'>200元 <text class='s3'>扣分分值：2</text></text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违章行为：</text>
+            <text class='s2'>机动车逆向行驶</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>发现机关：</text>
+            <text class='s2'>北京市朝阳区交警支队</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违章事件：</text>
+            <text class='s2'>2018-05-20</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违法地址：</text>
+            <text class='s2'>北京市朝阳区青年路</text>
+        </view>
+    </view>
+    <view class='cont'>
+        <view class='list'>
+            <text class='s1'>罚款数额：</text>
+            <text class='s2'>200元 <text class='s3'>扣分分值：2</text></text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违章行为：</text>
+            <text class='s2'>机动车逆向行驶</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>发现机关：</text>
+            <text class='s2'>北京市朝阳区交警支队</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违章事件：</text>
+            <text class='s2'>2018-05-20</text>
+        </view>
+        <view class='list'>
+            <text class='s1'>违法地址：</text>
+            <text class='s2'>北京市朝阳区青年路</text>
+        </view>
+    </view>
+</view>
+
+<view class='section-nodata'>-------------------- END --------------------</view>
+
