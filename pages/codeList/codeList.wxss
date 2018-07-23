@@ -9,3 +9,6 @@
 .cont-list .list .col-2 .row1 .s2{ display: inline-block; padding: 0 20rpx; line-height: 32rpx; font-size: 20rpx; background-color: #f14a5e; color: #fff; border-radius: 6rpx; vertical-align: top; margin: 16rpx 0 0 30rpx; }
 .cont-list .list .col-2 .row2{ color: #555; font-size: 26rpx; }
 .cont-list .list .col-3 image{ width: 20rpx; }
+
+.nodata{ display: none; width: 100%; text-align: center; font-size: 32rpx; color: #ff0000; position: absolute; left: 0; top: 40%; transform: translate(0,-50%); }
+.nodata.show{ display: block; }

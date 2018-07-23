@@ -5,7 +5,7 @@ const common = require('../../utils/common.js');
 Page({
     data: {
         isshow: true,
-        codeurl: '',
+        codeurl: '../images/qrcode.png',
         userid: '',
     },
     onLoad: function () {
@@ -151,8 +151,8 @@ Page({
         let userid = this.data.userid;
         console.log(userid);
         return {
-            title: '码上挪车，邀您赚赏金',
-            imageUrl: '../images/b-share.jpg',
+            title: '喊你挪车，邀您赚赏金',
+            imageUrl: '../images/bg2.png',
             path: 'pages/index/index?scene=shareuserid:' + userid
         }
     },
@@ -165,7 +165,7 @@ Page({
     /* 跳转活动规则 */
     linkGuize: function () {
         wx.navigateTo({
-            url: '../sjGuize/sjGuize'
+            url: '../shangjinGuize/shangjinGuize'
         });
     },
 })

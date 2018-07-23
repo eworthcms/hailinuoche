@@ -1,6 +1,7 @@
 <view class='section-1'>
-    <view class='row1'>挪车体验码</view>
-    <view class='row2'>注：此二维码仅作为体验使用</view>
+    <view class='row1'>挪车码</view>
+    <view class='row2' wx:if='{{codeType==1}}'>注：此二维码仅作为体验使用</view>
+    <view class='row2' wx:if='{{codeType==3}}'>注：此二维码未激活</view>
     <view class='row-qrcode'><image mode='widthFix' src='{{codeUrl}}'></image></view>  
 </view>
 

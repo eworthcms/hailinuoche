@@ -4,10 +4,14 @@
         <view class='col-2'>
             <view class='row1'>
                 <text class='s1'>{{item.licenseplate}}</text>
-                <text class='s2'>体验码</text>
+                <text class='s2' wx:if='{{item.type==1}}'>体验码</text>
+                <text class='s2' wx:if='{{item.type==2}}'>正式码</text>
+                <text class='s2' wx:if='{{item.type==3}}'>未激活码</text>
             </view>
             <view class='row2'>绑定手机： {{item.mobile}}</view>
         </view>
         <view class='col-3'><image mode='widthFix' src='../images/icon-arrow1.png'></image></view>
     </view>
 </view>
+
+<view class='nodata {{nodata?"show":""}}'>您还没有挪车码！</view>

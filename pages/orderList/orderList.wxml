@@ -1,8 +1,9 @@
 <view class='order-list' wx:for='{{list}}' wx:key=''>
     <view class='v-header'>
-        <text class='col-1'>下单时间</text>
         <text class='col-2'>{{item.ctime}}</text>
-        <text class='col-3'>{{item.type_name}}</text>
+        <text class='col-3 color1' wx:if='{{item.type==1}}'>{{item.type_name}}</text>
+        <text class='col-3 color2' wx:if='{{item.type==2}}'>{{item.type_name}}</text>
+        <text class='col-3 color3' wx:if='{{item.type==3}}'>{{item.type_name}}</text>
     </view>
     <view class='v-bodyer'>
         <view class='row'>
@@ -17,10 +18,16 @@
             <text class='col-1'>邮寄地址</text>
             <text class='col-2'>{{item.useraddressareainfo}}</text>
         </view>
-        <view class='row' wx:if='{{item.type==3}}'>
+        <view class='row row-wuliu' wx:if='{{item.type>2}}'>
+            <text class='col-1'>物流信息</text>
+            <text class='col-2'></text>
+        </view>
+        <view class='row' wx:if='{{item.type>2}}'>
             <text class='col-1'>快递单号</text>
             <text class='col-2'>{{item.tracknumber}}</text>
         </view>
         <image class='delete' data-index='{{index}}' data-orderid='{{item.id}}' mode='widthFix' catchtap='delete' src='../images/icon-delete.png'></image>
     </view>
 </view>
+
+<view class='nodata {{nodata?"show":""}}'>您还没有订单！</view>

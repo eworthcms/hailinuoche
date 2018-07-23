@@ -2,16 +2,16 @@
     "pages":[
         "pages/index/index",
         "pages/noticeCarowner/noticeCarowner",
+        "pages/inviteFriends/inviteFriends",
+        "pages/profit/profit",
+        "pages/codeList/codeList",
+        "pages/problemList/problemList",
+        "pages/orderList/orderList",
         "pages/me/me",
         "pages/experienceCode/experienceCode",
         "pages/bindCarnumber/bindCarnumber",
         "pages/reciveWay/reciveWay",
-        "pages/inviteFriends/inviteFriends",
-        "pages/sjGuize/sjGuize",
-        "pages/problemList/problemList",
-        "pages/profit/profit",
-        "pages/orderList/orderList",
-        "pages/codeList/codeList"
+        "pages/shangjinGuize/shangjinGuize"
     ],
     "window":{
         "backgroundTextStyle":"light",

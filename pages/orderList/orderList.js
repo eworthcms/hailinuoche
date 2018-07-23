@@ -3,7 +3,8 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
-        list: []
+        list: [],
+        nodata: false
     },
     onLoad: function () {
         wx.navloading();
@@ -17,19 +18,7 @@ Page({
             if (result.statusCode == 200 && result.data.code == 2000) {
                 that.setData({ list: result.data.data.list });
             } else if (result.statusCode == 200 && result.data.code == 4000) {
-                wx.showModal({
-                    title: '没有数据',
-                    content: '没有查询到列表数据',
-                    showCancel: false,
-                    confirmText: '我知道了',
-                    success: function (result1) {
-                        if (result1.confirm) {
-                            wx.switchTab({
-                                url: '../me/me'
-                            })
-                        }
-                    }
-                });
+                that.setData({ nodata: true });
             }else {
                 wx.showModal({
                     title: '获取列表失败',
@@ -47,7 +36,7 @@ Page({
             }
         }, function () {
             wx.showModal({
-                title: '获取列表失败',
+                title: '加载失败',
                 content: '服务器异常',
                 showCancel: false,
                 confirmText: '我知道了',

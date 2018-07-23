@@ -23,5 +23,5 @@
 </view>
 
 <view class='cont-customer-telephone'>
-    客服电话：<text class='text' catchtap='makeKefuCall' data-phonenumber='0938-5852222'>0938-5852222</text>
+    客服电话：<text class='text' catchtap='makeKefuCall' data-phonenumber='18514820511'><text>185</text>14820511</text>
 </view>

@@ -4,8 +4,9 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
-        carcodeinfo:'',
         codeUrl: '',
+        codeType: '',
+        options: '',
         carcodeid: '',
     },
     onLoad: function (options) {
@@ -25,6 +26,7 @@ Page({
                 console.log(result);
                 if (result.statusCode == 200 && result.data.code == 2000) {
                     that.setData({ codeUrl: result.data.data.codeurl });
+                    that.setData({ codeType: result.data.data.type });
                 } else {
                     wx.showModal({
                         title: '获取挪车码信息失败',
