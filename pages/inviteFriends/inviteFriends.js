@@ -142,6 +142,15 @@ Page({
                         wx.loading('close');
                     }
                 })
+            },
+            fail: function () {
+                wx.showModal({
+                    title: '保存失败',
+                    content: '获取图片信息失败',
+                    showCancel: false,
+                    confirmText: '我知道了'
+                });
+                wx.loading('close');
             }
 
         })
