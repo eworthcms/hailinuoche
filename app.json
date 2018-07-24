@@ -2,16 +2,16 @@
     "pages":[
         "pages/index/index",
         "pages/noticeCarowner/noticeCarowner",
+        "pages/bindCarnumber/bindCarnumber",
+        "pages/experienceCode/experienceCode",
+        "pages/shangjinGuize/shangjinGuize",
         "pages/inviteFriends/inviteFriends",
         "pages/profit/profit",
         "pages/codeList/codeList",
         "pages/problemList/problemList",
         "pages/orderList/orderList",
         "pages/me/me",
-        "pages/experienceCode/experienceCode",
-        "pages/bindCarnumber/bindCarnumber",
-        "pages/reciveWay/reciveWay",
-        "pages/shangjinGuize/shangjinGuize"
+        "pages/reciveWay/reciveWay"
     ],
     "window":{
         "backgroundTextStyle":"light",

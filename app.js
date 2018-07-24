@@ -28,7 +28,6 @@ App({
         plusOrderNumber: 0,
     },
     common: function () {
-        return new common();
     },
     onLaunch: function () {
     },

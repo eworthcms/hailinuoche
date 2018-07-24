@@ -1,5 +1,5 @@
-page{ padding: 30rpx 30rpx 10rpx; box-sizing: border-box; background-color: #fff; color: #000; font-size: 26rpx; }
+page{ padding: 30rpx 30rpx 10rpx; box-sizing: border-box; background-color: #fff; color: #666; font-size: 26rpx; }
 .h1{ font-size: 34rpx; }
 .list{ margin-top: 20rpx;}
-.list .p-header{ color: #1075c1; }
-.list .p-bodyer .p{ display: block; }
+.list .p-header{ color: #3f270b; font-size: 28rpx; }
+.list .p-bodyer .p{ display: block; padding-top: 3px; }

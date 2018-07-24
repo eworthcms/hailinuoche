@@ -1,27 +1,25 @@
-<view class='banner'>
-    <image class='bgimg' mode='widthFix' src='../images/banner2.png'></image>
-    <view class='left'>
-        <text class='row1'>{{licenseplate}}</text>
-        <text class='row2'>临时停靠，请多关照！</text>
+<view class='section-bg1'>
+    <image class='bg' mode='widthFix' src='../images/bg5.png'></image>
+    <view class='carbox'>
+        <image class='bg1' mode='widthFix' src='../images/bg7.png'></image>
+        <text class='text'>{{licenseplate}}</text>
     </view>
-    
 </view>
-
-<view class='section-1'>
-    <view class='text'>通知车主</view>
+<view class='section-bg2'>
+    <image class='bg' mode='widthFix' src='../images/bg6.png'></image>
 </view>
-
 
 <view class='section-btns' wx:if='{{!hasjihuo}}'>
-    <view class='section-tips'>您可以通过匿名电话的方式通知车主进行挪车。给您带来的不便，敬请谅解！</view>
-    <view class='btn' catchtap="nimingPhoneCall">匿名电话通知</view>
+    <view class='btn' catchtap="nimingPhoneCall" wx:if='{{!btnDisabled}}'>匿名电话通知</view>
+    <view class='btn disabled' wx:if='{{btnDisabled}}'>匿名电话通知</view>
 </view> 
 
-<view class='section-jihuo' wx:if='{{hasjihuo}}'>
+<!-- <view class='section-btns section-jihuo' wx:if='{{hasjihuo}}'> -->
+<view class='section-btns' wx:if='{{hasjihuo}}'>
     <view class='section-tips'>您的挪车码还未激活</view>
     <button class='btn' open-type="getPhoneNumber" bindgetphonenumber="jihuoCode">现在去激活吧</button>
 </view>
 
-<view class='cont-customer-telephone'>
+<view class='section-telephone'>
     客服电话：<text class='text' catchtap='makeKefuCall' data-phonenumber='18514820511'><text>185</text>14820511</text>
 </view>

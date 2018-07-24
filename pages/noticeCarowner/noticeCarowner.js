@@ -4,11 +4,12 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
+        authorization: '',
         status: '',
         key: '',
         licenseplate: '',
         mobile: '',
-        codeurl: '../images/nav-index.png',
+        btnDisabled: false,
         hasjihuo: false,//挪车码还未激活
     },
     onLoad: function (options) {
@@ -30,12 +31,13 @@ Page({
                             success: function (res) {
                                 console.log(res)
                                 if (res.statusCode == 200 && res.data.code == 2000) {
+                                    that.setData({ authorization: res.data.data.authorization });
                                     wx.setStorageSync('authorization', res.data.data.authorization);
-                                    wx.loading();
-                                    wx.navloading();
                                     resolve(options);
                                 } else if (result.statusCode == 200 && result.data.code == 3003) {
                                     that.onLoad(options);
+                                    wx.loading('close');
+                                    wx.navloading('close');
                                 }
                             },
                             fail: function () {
@@ -44,8 +46,6 @@ Page({
                                 wx.navloading('close');
                             },
                             complete: function () {
-                                wx.loading('close');
-                                wx.navloading('close');
                             }
                         });
                     }
@@ -54,8 +54,6 @@ Page({
         });
 
         myPromise.then(function (options) {
-            wx.loading();
-            wx.navloading();
             let newcommon = new common();
             let param = newcommon.data;
             let scene = decodeURIComponent(options.scene);
@@ -67,16 +65,18 @@ Page({
 
             that.setData({ key: key });
             param.key = key;
-            param.sign = md5.hexMD5(param.authorization + param.request_time + 'reminduserinfo' + 'jo8LJjY4T9');
+            param.sign = md5.hexMD5(that.data.authorization + param.request_time + 'reminduserinfo' + 'jo8LJjY4T9');
             param.url = newcommon.apiurl + 'index/index/reminduserinfo';
             newcommon.ajax(param, function (res) {
                 console.log(res);
                 if (res.statusCode == 200 && res.data.code == 2000) {
                     that.setData({ licenseplate: res.data.data.licenseplate });
                     that.setData({ mobile: res.data.data.mobile });
-                    that.setData({ codeurl: newcommon.apiurl + res.data.data.codeurl });
                     return false;
+                }else{
+                    that.setData({ btnDisabled: true }); 
                 }
+
                 if (res.statusCode == 200 && res.data.code == 5000) {
                     wx.showModal({
                         title: '匿名拨打电话失败',

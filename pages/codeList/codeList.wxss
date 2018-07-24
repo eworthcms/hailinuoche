@@ -3,7 +3,7 @@
 .cont-list .list::after{ content: ""; display: block; position: absolute; left: 30rpx; right: 0; bottom: 0; border-top: solid 1rpx #eee; }
 .cont-list .list:nth-last-child(1)::after{ border-top: 0; }
 .cont-list .list .col-1{ margin-right: 20rpx; display: flex; align-items: center; }
-.cont-list .list .col-1 image{ width: 90rpx; }
+.cont-list .list .col-1 image{ width: 90rpx; height: 90rpx; }
 .cont-list .list .col-2{ flex: 1; }
 .cont-list .list .col-2 .row1 .s1{ color: #111; font-size: 42rpx; }
 .cont-list .list .col-2 .row1 .s2{ display: inline-block; padding: 0 20rpx; line-height: 32rpx; font-size: 20rpx; background-color: #f14a5e; color: #fff; border-radius: 6rpx; vertical-align: top; margin: 16rpx 0 0 30rpx; }
