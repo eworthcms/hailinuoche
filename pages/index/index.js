@@ -4,79 +4,55 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
-        authorization: '',
         timeout: 0
     },
-    onShow: function (options){
-        wx.loading('close');
-    },
     onLoad: function (options) {
-        console.log(options);
-        const that = this;
-
-        //if (options.scene) {
-        if (options.scene) {
-            //let isdo = wx.getStorageSync('isdo');
-            let scene = unescape(options.scene);
-            console.log(scene);
-            let userid = scene.split(':')[1];
-            console.log(userid);
-
-            that.getIsdo(userid);
-        }
-    },
-    getIsdo: function (userid){
         wx.loading();
+        wx.navloading();
         const that = this;
-        var setTimeoutFn;
-        let isdo = getApp().globalData.isdo;
-        //let isdo = 'insert';
-        console.log(isdo);
 
-        // wx.showModal({
-        //     title: '返回值：' + isdo,
-        //     content: '',
-        //     showCancel: false,
-        //     confirmText: '我知道了',
-        // });
-
-        if (isdo == 'isdo') {
-            console.log('1');
-            // if (that.data.timeout >= 10) {
-            //     wx.showModal({
-            //         title: '请求超时',
-            //         content: '请求超时',
-            //         showCancel: false,
-            //         confirmText: '我知道了',
-            //     });
-            //     return false;
-            // }
-            setTimeoutFn = setTimeout(function () {
-                //that.data.data++;
-                that.getIsdo(userid);
-            }, 1000);
-        } else if (isdo == 'insert') {
-            clearTimeout(setTimeoutFn);
-            console.log('2');
-            let newcommon = new common();
-            let param = newcommon.data;
-            param.userid = userid;
-            param.sign = md5.hexMD5(param.authorization + param.request_time + 'bindshare' + 'jo8LJjY4T9');
-            param.url = newcommon.apiurl + 'index/index/bindshare';
-            newcommon.ajax(param, function (result) {
-                console.log(result);
-                //wx.removeStorageSync('isdo');
-                getApp().globalData.isdo = 'update';
-            }, function () {
-                wx.loading('close');
-            }, function () {
-                wx.loading('close');
-            });
-        } else if (isdo == 'update')  {
-            console.log('3');
-            clearTimeout(setTimeoutFn);
-            wx.loading('close');
-        }
+        console.log(options);
+        wx.login({
+            success: function (res) {
+                //console.log(res);
+                if (res.code) {
+                    let userid = '';
+                    let newcommon = new common();
+                    let param = {};
+                    param.js_code = res.code;
+                    if (options.scene) {
+                        let scene = unescape(options.scene);
+                        console.log(scene);
+                        userid = scene.split(':')[1];
+                        console.log(userid);
+                        param.userid = userid;
+                    } else if (options.wxmp) {
+                        param.wxmp = options.wxmp;
+                    }
+                    wx.request({
+                        url: newcommon.apiurl + 'index/Api/authorization',
+                        data: param,
+                        method: 'POST',
+                        success: function (res1) {
+                            console.log(res1)
+                            if (res1.statusCode == 200 && res1.data.code == 2000) {
+                                wx.setStorageSync('authorization', res1.data.data.authorization);
+                                //getApp().globalData.authorization = res.data.data.authorization;
+                            } else if (res1.statusCode == 200 && res1.data.code == 3003) {
+                                that.onLoad(options);
+                            }
+                        },
+                        fail: function () {
+                            that.onLoad(options);
+                        },
+                        complete: function () {
+                            wx.loading('close');
+                            wx.navloading('close');
+                        }
+                    });
+                }
+            }
+        });
     },
     /* 跳转绑定车牌号 */
     linkBindCarnumber: function(){

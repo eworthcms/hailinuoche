@@ -1,4 +1,4 @@
-page{ padding: 20rpx 20rpx 20rpx; box-sizing: border-box; background-color: #ffd700; }
+page{ padding: 20rpx 30rpx 20rpx; box-sizing: border-box; background-color: #ffd700; }
 
 .problemt-list{ background-color: #fff; margin-bottom: 30rpx; border-radius: 10rpx; }
 .problemt-list .p-header{ color: #333; font-size: 28rpx; padding: 20rpx 30rpx; position: relative; }

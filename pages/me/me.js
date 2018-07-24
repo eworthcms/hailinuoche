@@ -58,22 +58,25 @@ Page({
         });
     },
     contactKefu: function () {
-        wx.showActionSheet({
-            itemList: ['185 1482 0511', '呼叫'],
-            success: function (res) {
-                /* 18514820511 */
-                if (res.tapIndex == 0) {
-                    wx.makePhoneCall({
-                        phoneNumber: '18514820511'
-                    });
-                }
-                /* 呼叫 */
-                if (res.tapIndex == 1) {
-                    wx.makePhoneCall({
-                        phoneNumber: '18514820511'
-                    });
-                }
-            }
+        wx.makePhoneCall({
+            phoneNumber: '18514820511'
         });
+        // wx.showActionSheet({
+        //     itemList: ['18514820511', '呼叫'],
+        //     success: function (res) {
+        //         // 18514820511 
+        //         if (res.tapIndex == 0) {
+        //             wx.makePhoneCall({
+        //                 phoneNumber: '18514820511'
+        //             });
+        //         }
+        //         // 呼叫 
+        //         if (res.tapIndex == 1) {
+        //             wx.makePhoneCall({
+        //                 phoneNumber: '18514820511'
+        //             });
+        //         }
+        //     }
+        // });
     },
 })

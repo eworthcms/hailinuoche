@@ -2,7 +2,7 @@ function common() {
     let time = new Date().getTime() / 1000;
     let request_time = time.toString().replace(/\.\d{0,}/g, '');
     let authorization = wx.getStorageSync('authorization');
-    this.apiurl = 'https://car.wangsongyang.com/'; 
+    this.apiurl = 'https://car.fandaxia.com/'; 
     this.data = {
         url: '',
         request_time: request_time,

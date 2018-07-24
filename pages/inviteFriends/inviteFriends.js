@@ -27,14 +27,7 @@ Page({
                     title: '获取分享码失败',
                     content: result.data.msg,
                     showCancel: false,
-                    confirmText: '我知道了',
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.switchTab({
-                                url: '../me/me'
-                            });
-                        }
-                    }
+                    confirmText: '我知道了'
                 });
             }
             wx.loading('close');
@@ -44,14 +37,7 @@ Page({
                 title: '获取分享码失败',
                 content: '服务器异常',
                 showCancel: false,
-                confirmText: '我知道了',
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.switchTab({
-                            url: '../me/me'
-                        });
-                    }
-                }
+                confirmText: '我知道了'
             });
             }, function () {
             wx.loading('close');
@@ -74,14 +60,7 @@ Page({
                     title: '获取用户id失败',
                     content: result.data.msg,
                     showCancel: false,
-                    confirmText: '我知道了',
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.switchTab({
-                                url: '../me/me'
-                            });
-                        }
-                    }
+                    confirmText: '我知道了'
                 });
             }
             wx.loading('close');
@@ -91,14 +70,7 @@ Page({
                 title: '获取用户id失败',
                 content: '服务器异常',
                 showCancel: false,
-                confirmText: '我知道了',
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.switchTab({
-                            url: '../me/me'
-                        });
-                    }
-                }
+                confirmText: '我知道了'
             });
         }, function () {
             wx.loading('close');
