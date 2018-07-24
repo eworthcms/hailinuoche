@@ -10,7 +10,6 @@ Page({
         wx.loading();
         wx.navloading();
         const that = this;
-
         console.log(options);
         wx.login({
             success: function (res) {
