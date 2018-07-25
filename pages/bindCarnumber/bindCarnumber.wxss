@@ -14,7 +14,7 @@ page{ background-color: #ffd700; padding: 25px 40rpx 0; }
 .btns .btn{ height: 96rpx; line-height: 96rpx; background-color: #3f270b; color: #fff; font-size: 30rpx; text-align: center; }
 
 .cont-customer-telephone{ text-align: center; color: #666; font-size: 28rpx; }
-.cont-customer-telephone .text{ color: #1075c1; }
+.cont-customer-telephone .text{  }
 
 
 .province-action{ position: fixed; bottom: 0; left: 0; width: 100%; background-color: #dadbdd; box-sizing: border-box; }

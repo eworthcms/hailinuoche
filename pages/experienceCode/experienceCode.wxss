@@ -11,5 +11,5 @@ page{ padding: 40rpx 55rpx ; background-color: #ffd700; }
 .btns .btn0{ background-color: #fff; color: #000; margin-top: 50rpx; }
 
 .cont-customer-telephone{ text-align: center; color: #999; font-size: 28rpx; padding-top: 40rpx; }
-.cont-customer-telephone .text{ color: #1075c1; }
+.cont-customer-telephone .text{  }
 
