@@ -1,17 +1,17 @@
 {
     "pages":[
         "pages/index/index",
-        "pages/noticeCarowner/noticeCarowner",
-        "pages/bindCarnumber/bindCarnumber",
         "pages/experienceCode/experienceCode",
+        "pages/reciveWay/reciveWay",
+        "pages/bindCarnumber/bindCarnumber",
+        "pages/noticeCarowner/noticeCarowner",
         "pages/shangjinGuize/shangjinGuize",
         "pages/inviteFriends/inviteFriends",
         "pages/profit/profit",
         "pages/codeList/codeList",
         "pages/problemList/problemList",
         "pages/orderList/orderList",
-        "pages/me/me",
-        "pages/reciveWay/reciveWay"
+        "pages/me/me"
     ],
     "window":{
         "backgroundTextStyle":"light",

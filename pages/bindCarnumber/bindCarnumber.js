@@ -48,7 +48,8 @@ Page({
         this.setData({ province: province });
     },
     setCarNumber: function (e) {
-        this.setData({ carNumber: e.detail.value });
+        let carNumber = e.detail.value.toUpperCase();
+        this.setData({ carNumber: carNumber });
     },
     save: function () {
         const that = this;

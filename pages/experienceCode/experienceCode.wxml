@@ -2,14 +2,18 @@
     <view class='row1'>挪车码</view>
     <view class='row2' wx:if='{{codeType==1}}'>注：此二维码仅作为体验使用</view>
     <view class='row2' wx:if='{{codeType==3}}'>注：此二维码未激活</view>
-    <view class='row-qrcode'><image mode='widthFix' src='{{codeUrl}}'></image></view>  
 </view>
 
-<view class='btns'>
+<view class='section-qrcode'>
+    <image class='bgborder' mode='widthFix' src='../images/bg9.png'></image>
+    <image class='code' mode='widthFix' src='{{codeUrl}}'></image>
+</view>  
+
+<view class='btns' wx:if='{{codeType==1}}'>
     <view class='btn' catchtap='applyPost'>申请邮寄</view>
 </view>
 
-<view class='section-2'>您将收到一套精美挪车贴，按照说明书绑定即可使用</view>
+<view class='section-2' wx:if='{{codeType==2}}'>您将收到一套精美挪车贴，按照说明书绑定即可使用</view>
 
 <view class='btns' wx:if='{{codeType==1}}'>
     <view class='btn btn0' catchtap='deleteCode'>删除体验码</view>

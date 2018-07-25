@@ -20,7 +20,7 @@
         </view>
         <view class='row row-wuliu' wx:if='{{item.type>2}}'>
             <text class='col-1'>物流信息</text>
-            <text class='col-2'></text>
+            <text class='col-2'>{{item.logistics}}</text>
         </view>
         <view class='row' wx:if='{{item.type>2}}'>
             <text class='col-1'>快递单号</text>

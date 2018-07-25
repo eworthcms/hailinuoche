@@ -5,8 +5,7 @@
     </view>
 </view>
 
-
-<view class='profit-list'>
+<view class='profit-list' style='display:none;'>
     <view class='p-title'>收益明细</view>
     <view class='list'>
         <view class='col-1'>邀请好友138****5678</view>
@@ -22,7 +21,6 @@
     </view>
 </view>
 
-
-<view class='section-btns'>
+<view class='section-btns' style='display:none;'>
     <view class='btn ' catchtap='save'>申请提现</view>
 </view> 

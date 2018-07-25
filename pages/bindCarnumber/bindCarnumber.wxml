@@ -3,7 +3,7 @@
     <view class='bodyer'>
         <view class='row1'>
             <view class='province' catchtap='showProvince'>{{province}}</view>
-            <input placeholder="请输入车牌号" placeholder-class="placeholder" focus bindinput='setCarNumber'/>
+            <input placeholder="请输入车牌号" placeholder-class="placeholder" focus bindinput='setCarNumber' value='{{carNumber}}'/>
         </view>
         <view class='row2'>绑定电话</view>
         <view class='row3'>挪车将通知您微信绑定的手机号{{phoneNumber}}</view>

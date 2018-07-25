@@ -1,6 +1,7 @@
 .section-1{ padding: 40rpx 40rpx 20rpx; background-color: #fff; }
 .section-1 .view-cont{ display: flex; align-items: center; }
 .section-1 .view-cont .left{ width: 180rpx; height: 180rpx; background-color: #e9e9e9; }
+.section-1 .view-cont .left image{ width: 100%; height: 180rpx; }
 .section-1 .view-cont .right{ flex: 1; margin-left: 40rpx; }
 .section-1 .view-cont .right .row1{ display: block; font-size: 40rpx; color: #3f270b; }
 .section-1 .view-cont .right .row2{ display: block; font-size: 32rpx; color: #999; }

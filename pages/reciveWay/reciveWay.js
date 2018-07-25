@@ -145,8 +145,8 @@ Page({
                     },
                     'fail': function (res) {
                         wx.showModal({
-                            title: '支付失败',
-                            content: '调用微信支付失败，请重新支付',
+                            title: '微信支付失败',
+                            content: '请重新支付',
                             showCancel: false,
                             confirmText: '我知道了',
                             success: function (res) {
@@ -159,15 +159,15 @@ Page({
                 });
             } else {
                 wx.showModal({
-                    title: '支付失败',
-                    content: '调用支付失败',
+                    title: '微信支付失败',
+                    content: '',
                     showCancel: false,
                     confirmText: '我知道了'
                 });
             }
         }, function () {
             wx.showModal({
-                title: '支付失败',
+                title: '微信支付失败',
                 content: '服务器异常',
                 showCancel: false,
                 confirmText: '我知道了'

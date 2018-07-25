@@ -6,6 +6,7 @@ Page({
     data: {
         isshow: true,
         codeurl: '../images/qrcode.png',
+        downloadurl: '',
         userid: '',
     },
     onLoad: function () {
@@ -21,7 +22,8 @@ Page({
         newcommon.ajax(param, function (result) {
             console.log(result);
             if (result.statusCode == 200 && result.data.code == 2000) {
-                that.setData({ codeurl: result.data.data.downloadurl });
+                that.setData({ codeurl: result.data.data.codeurl });
+                that.setData({ downloadurl: result.data.data.downloadurl });
             } else {
                 wx.showModal({
                     title: '获取分享码失败',
@@ -88,7 +90,7 @@ Page({
         wx.loading({ title: '保存中...' });
         const that = this;
         wx.getImageInfo({
-            src: that.data.codeurl,
+            src: that.data.downloadurl,
             success: function (res) {
                 console.log(res.path);
                 wx.saveImageToPhotosAlbum({
@@ -124,7 +126,6 @@ Page({
                 });
                 wx.loading('close');
             }
-
         })
     },
     /* 分享给好友 */

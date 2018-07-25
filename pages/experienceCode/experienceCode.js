@@ -4,6 +4,7 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
+        //codeUrl: '../images/qrcode.png',
         codeUrl: '',
         codeType: '',
         options: '',
