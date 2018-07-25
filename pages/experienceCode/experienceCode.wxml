@@ -11,7 +11,7 @@
 
 <view class='section-2'>您将收到一套精美挪车贴，按照说明书绑定即可使用</view>
 
-<view class='btns'>
+<view class='btns' wx:if='{{codeType==1}}'>
     <view class='btn btn0' catchtap='deleteCode'>删除体验码</view>
 </view>
 
