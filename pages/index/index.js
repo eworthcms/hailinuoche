@@ -85,16 +85,16 @@ Page({
                 });
             } else {
                 wx.showModal({
-                    title: '获取手机号失败',
-                    content: '请重新尝试获取',
+                    title: '获取失败',
+                    content: '请重新获取手机号',
                     showCancel: false,
                     confirmText: '我知道了',
                 });
             }
         }, function () {
             wx.showModal({
-                title: '获取手机号失败',
-                content: '服务器异常，请重新尝试',
+                title: '服务器异常',
+                content: '请重新获取手机号',
                 showCancel: false,
                 confirmText: '我知道了',
             });
