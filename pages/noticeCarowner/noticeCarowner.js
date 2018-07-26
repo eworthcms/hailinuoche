@@ -59,8 +59,8 @@ Page({
             let scene = decodeURIComponent(options.scene);
             let sceneArray = scene.split('==');
             let status = sceneArray[0];
-            let key = sceneArray[1];
-            //let key = 'key15305142349748';//已经激活的key，可以直接匿名打电话调起拨号界面
+            //let key = sceneArray[1];
+            let key = 'key15325253649665';//已经激活的key，可以直接匿名打电话调起拨号界面
             //let key = 'key15305214887384';//正式未激活的挪车码，但是还未绑定
 
             that.setData({ key: key });
@@ -77,6 +77,15 @@ Page({
                     that.setData({ btnDisabled: true }); 
                 }
 
+                if (res.statusCode == 200 && res.data.code == 3023) {
+                    wx.showModal({
+                        title: '免打扰模式',
+                        content: '该车主已开启免打扰模式',
+                        showCancel: false,
+                        confirmText: '我知道了'
+                    });
+                    return false;
+                }
                 if (res.statusCode == 200 && res.data.code == 5000) {
                     wx.showModal({
                         title: '匿名拨打电话失败',

@@ -1,14 +1,14 @@
 {
     "pages":[
+        "pages/noticeCarowner/noticeCarowner",
+        "pages/codeList/codeList",
         "pages/index/index",
         "pages/experienceCode/experienceCode",
         "pages/reciveWay/reciveWay",
         "pages/bindCarnumber/bindCarnumber",
-        "pages/noticeCarowner/noticeCarowner",
         "pages/shangjinGuize/shangjinGuize",
         "pages/inviteFriends/inviteFriends",
         "pages/profit/profit",
-        "pages/codeList/codeList",
         "pages/problemList/problemList",
         "pages/orderList/orderList",
         "pages/me/me"
