@@ -4,19 +4,21 @@ const common = require('../../utils/common.js');
 
 Page({
     data: {
+        options: '',
         authorization: '',
         status: '',
         key: '',
         licenseplate: '',
         mobile: '',
         btnDisabled: false,
+        mianDarao: false,
         hasjihuo: false,//挪车码还未激活
     },
     onLoad: function (options) {
         wx.loading();
         wx.navloading();
         const that = this;
-
+        that.setData({ options: options });
         let myPromise = new Promise(function (resolve, reject) {
             wx.login({
                 success: function (res) {
@@ -59,8 +61,8 @@ Page({
             let scene = decodeURIComponent(options.scene);
             let sceneArray = scene.split('==');
             let status = sceneArray[0];
-            //let key = sceneArray[1];
-            let key = 'key15325253649665';//已经激活的key，可以直接匿名打电话调起拨号界面
+            let key = sceneArray[1];
+            //let key = 'key15325253649665';//已经激活的key，可以直接匿名打电话调起拨号界面
             //let key = 'key15305214887384';//正式未激活的挪车码，但是还未绑定
 
             that.setData({ key: key });
@@ -78,6 +80,7 @@ Page({
                 }
 
                 if (res.statusCode == 200 && res.data.code == 3023) {
+                    that.setData({ mianDarao: true }); 
                     wx.showModal({
                         title: '免打扰模式',
                         content: '该车主已开启免打扰模式',
@@ -227,19 +230,57 @@ Page({
     },
     /* 拨打匿名电话 */
     nimingPhoneCall: function () {
-        wx.loading();
         const that = this;
-        let phoneNumber = that.data.mobile;
-        //console.log(phoneNumber);
-        setTimeout(function () {
-            wx.makePhoneCall({
-                phoneNumber: phoneNumber,
-                complete: function () {
-                    wx.loading('close');
+        if (!that.data.btnDisabled) {
+            wx.loading();
+            let phoneNumber = that.data.mobile;
+            //console.log(phoneNumber);
+            setTimeout(function () {
+                wx.makePhoneCall({
+                    phoneNumber: phoneNumber,
+                    complete: function () {
+                        wx.loading('close');
+                    }
+                });
+                wx.loading('close');
+            }, 500);
+        }
+    },
+    /* 免打扰的情况下点击按钮 */
+    noPass: function () {
+        const that = this;
+        if (that.data.mianDarao) {
+            wx.loading();
+
+            let options = that.data.options;
+            let newcommon = new common();
+            let param = newcommon.data;
+            let scene = decodeURIComponent(options.scene);
+            let sceneArray = scene.split('==');
+            let status = sceneArray[0];
+            let key = sceneArray[1];
+            //let key = 'key15325253649665';//已经激活的key，可以直接匿名打电话调起拨号界面
+            //let key = 'key15305214887384';//正式未激活的挪车码，但是还未绑定
+
+            param.key = key;
+            param.sign = md5.hexMD5(that.data.authorization + param.request_time + 'reminduserinfo' + 'jo8LJjY4T9');
+            param.url = newcommon.apiurl + 'index/index/reminduserinfo';
+            newcommon.ajax(param, function (res) {
+                console.log(res);
+                if (res.statusCode == 200 && res.data.code == 3023) {
+                    wx.showModal({
+                        title: '免打扰模式',
+                        content: '该车主已开启免打扰模式',
+                        showCancel: false,
+                        confirmText: '我知道了'
+                    });
+                    return false;
                 }
+            },function(){    
+            },function () {
+                wx.loading('close');
             });
-            wx.loading('close');
-        }, 500);
+        }
     },
     /* 激活体验码按钮 */
     jihuoCode: function (e) {

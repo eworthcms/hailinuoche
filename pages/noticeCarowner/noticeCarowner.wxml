@@ -11,7 +11,7 @@
 
 <view class='section-btns' wx:if='{{!hasjihuo}}'>
     <view class='btn' catchtap="nimingPhoneCall" wx:if='{{!btnDisabled}}'>匿名电话通知</view>
-    <view class='btn disabled' wx:if='{{btnDisabled}}'>匿名电话通知</view>
+    <view class='btn disabled' catchtap='noPass' wx:if='{{btnDisabled}}'>匿名电话通知</view>
 </view> 
 
 <!-- <view class='section-btns section-jihuo' wx:if='{{hasjihuo}}'> -->

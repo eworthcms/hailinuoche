@@ -62,6 +62,7 @@ Page({
         if (options.from == 'pageBindCarnumber') {
             that.setData({ codeUrl: options.codeUrl });
             that.setData({ carcodeid: options.carcodeid });
+            that.setData({ codeType: 1 });
         }
         
     },

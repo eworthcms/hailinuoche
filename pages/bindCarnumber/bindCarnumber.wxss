@@ -7,14 +7,15 @@ page{ background-color: #ffd700; padding: 25px 40rpx 0; }
 .section-cont1 .bodyer .row1 .province::after{ content: ""; display: block; border: solid 8rpx transparent; border-top: solid 8rpx #fff; position: absolute; top: 30rpx; right: 25rpx; }
 .section-cont1 .bodyer .row1 input{ flex: 1; height: 100%; font-size: 32rpx; color: #000; }
 .section-cont1 .bodyer .row1 .placeholder{ color: #999; }
-.section-cont1 .bodyer .row2{ font-size: 32rpx; padding-top: 40rpx; }
-.section-cont1 .bodyer .row3{ font-size: 28rpx; color: #666; }
+.section-cont1 .bodyer .row2{ font-size: 32rpx; padding-top: 30rpx; }
+.section-cont1 .bodyer .row3{ font-size: 28rpx; color: #999; padding-top: 30rpx; border-top: solid 1rpx #eee; margin-top: 25rpx; }
+.section-cont1 .bodyer .row4{ display: flex; align-items: center; padding: 10rpx 0 0; }
+.section-cont1 .bodyer .row4 .input{ font-size: 30rpx; }
 
 .btns{ padding: 40rpx 0; }
 .btns .btn{ height: 96rpx; line-height: 96rpx; background-color: #3f270b; color: #fff; font-size: 30rpx; text-align: center; }
 
 .cont-customer-telephone{ text-align: center; color: #666; font-size: 28rpx; }
-.cont-customer-telephone .text{  }
 
 
 .province-action{ position: fixed; bottom: 0; left: 0; width: 100%; background-color: #dadbdd; box-sizing: border-box; }

@@ -2,11 +2,11 @@
 const app = getApp();
 const md5 = require('../../utils/md5.js');
 const common = require('../../utils/common.js');
-
+const initPrice = 25.9;
 Page({
     data: {
         buyNumber: 1,
-        totalPrice: 25.9,
+        totalPrice: '',
         hasAddress: false,
         userName: '',
         telNumber: '',
@@ -14,20 +14,21 @@ Page({
         allAddressInfo: ''
     },
     onLoad: function () {
+        this.setData({ totalPrice: initPrice });
     },
     /* 减 */
     reduce: function () {
         let buyNumber = this.data.buyNumber;
         buyNumber = buyNumber <= 1 ? 1 : --buyNumber;
         this.setData({ buyNumber: buyNumber });
-        this.setData({ totalPrice: (25.9 * buyNumber).toFixed(1)});
+        this.setData({ totalPrice: (initPrice * buyNumber).toFixed(1)});
     },
     /* 加 */
     add: function () {
         let that = this;
         let buyNumber = this.data.buyNumber;
         this.setData({ buyNumber: ++buyNumber });
-        this.setData({ totalPrice: (25.9 * that.data.buyNumber).toFixed(1) });
+        this.setData({ totalPrice: (initPrice * that.data.buyNumber).toFixed(1) });
     },
     /* 调用微信地址 */
     chooseAddress: function () {

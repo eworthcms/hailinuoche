@@ -1,8 +1,8 @@
 {
     "pages":[
+        "pages/index/index",
         "pages/noticeCarowner/noticeCarowner",
         "pages/codeList/codeList",
-        "pages/index/index",
         "pages/experienceCode/experienceCode",
         "pages/reciveWay/reciveWay",
         "pages/bindCarnumber/bindCarnumber",

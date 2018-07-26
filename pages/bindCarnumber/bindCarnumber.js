@@ -30,6 +30,11 @@ Page({
             this.setData({ isjihuo: true});
         }
     },
+    /* 点击更换手机号 */
+    setPhoneNumber: function (e) {
+        let phoneNumber = e.detail.value;
+        this.setData({ phoneNumber: phoneNumber });
+    },
     /* 拨打电话 */
     makePhoneCall: function (e) {
         let phoneNumber = e.currentTarget.dataset.phonenumber;
@@ -61,14 +66,26 @@ Page({
             wx.showModal({
                 title: '',
                 showCancel: false,
-                content: '请输入正确车牌号',
+                content: '请输入正确的车牌号',
                 confirmText: '我知道了'
             });
             return false;
         }
+
+        let phoneNumber = that.data.phoneNumber;
+        if (!/^1\d{10}$/.test(phoneNumber)) {
+            wx.showModal({
+                title: '',
+                showCancel: false,
+                content: '请输入正确的手机号',
+                confirmText: '我知道了'
+            });
+            return false;
+        }
+
         wx.showModal({
-            title: '是否将手机号和车牌号绑定？',
-            content: '手机号：' + that.data.phoneNumber +'\r\n车牌号：' + carNumber,
+            title: '是否将车牌号和手机号绑定？',
+            content: '车牌号：' + carNumber + '\r\n手机号：' + that.data.phoneNumber,
             success: function (res) {
                 if (res.confirm) {
                     wx.loading({ title: '生成中，请稍等...' });
