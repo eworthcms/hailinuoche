@@ -9,6 +9,9 @@ Page({
         codeType: '',
         options: '',
         carcodeid: '',
+        licenseplate:'',
+        mobile: '',
+        status: ''
     },
     onLoad: function (options) {
         console.log(options);
@@ -17,7 +20,7 @@ Page({
         //如果是从挪车码列表跳过来的
         if (options.from =='pageCodelist'){
             that.setData({ carcodeid: options.carcodeid });
-
+            wx.loading();
             let newcommon = new common();
             let param = newcommon.data;
             param.carcodeid = options.carcodeid;
@@ -27,7 +30,10 @@ Page({
                 console.log(result);
                 if (result.statusCode == 200 && result.data.code == 2000) {
                     that.setData({ codeUrl: result.data.data.codeurl });
+                    that.setData({ licenseplate: result.data.data.licenseplate });
+                    that.setData({ mobile: result.data.data.mobile });
                     that.setData({ codeType: result.data.data.type });
+                    that.setData({ status: result.data.data.status });
                 } else {
                     wx.showModal({
                         title: '获取挪车码信息失败',
@@ -54,7 +60,7 @@ Page({
                     }
                 });
             }, function () {
-                wx.navloading('close');
+                wx.loading('close');
             });
         }
 
@@ -64,6 +70,45 @@ Page({
             that.setData({ carcodeid: options.carcodeid });
         }
         
+    },
+    /* 是否关闭接收状态 */
+    switchChangeStatus: function (e) {  
+        const that = this;
+        let msg = e.detail.value ? '开启' : '关闭';
+        let newcommon = new common();
+        let param = newcommon.data;
+        param.carcodeid = that.data.options.carcodeid;
+        param.status = e.detail.value ? 1 : 2;
+        param.sign = md5.hexMD5(param.authorization + param.request_time + 'editcarcode' + 'jo8LJjY4T9');
+        param.url = newcommon.apiurl + 'index/index/editcarcode';
+        wx.loading();
+        newcommon.ajax(param, function (result) {
+            console.log(result);
+            if (result.statusCode == 200 && result.data.code == 2000) {
+                wx.showModal({
+                    title: msg+'成功',
+                    content: '',
+                    showCancel: false,
+                    confirmText: '我知道了'
+                });
+            } else {
+                wx.showModal({
+                    title: msg +'失败',
+                    content: '请再试一次',
+                    showCancel: false,
+                    confirmText: '我知道了'
+                });
+            }
+        }, function () {
+            wx.showModal({
+                title: msg +'失败',
+                content: '服务器异常',
+                showCancel: false,
+                confirmText: '我知道了'
+            });
+        }, function () {
+            wx.loading('close');
+        });
     },
     /* 拨打客服电话 */
     makePhoneCall: function (e) {
