@@ -1,9 +1,9 @@
 {
     "pages":[
         "pages/index/index",
+        "pages/experienceCode/experienceCode",
         "pages/noticeCarowner/noticeCarowner",
         "pages/codeList/codeList",
-        "pages/experienceCode/experienceCode",
         "pages/reciveWay/reciveWay",
         "pages/bindCarnumber/bindCarnumber",
         "pages/shangjinGuize/shangjinGuize",

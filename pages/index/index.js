@@ -6,6 +6,8 @@ Page({
     data: {
         timeout: 0
     },
+    onShareAppMessage: function () { 
+    },
     onLoad: function (options) {
         wx.loading();
         wx.navloading();

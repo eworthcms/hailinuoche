@@ -1,5 +1,4 @@
 <view class='section-1'>
-    <view class='row1'>挪车码</view>
     <view class='row2' wx:if='{{codeType==1}}'>注：此挪车码仅作为体验使用</view>
     <view class='row2' wx:if='{{codeType==3}}'>注：此挪车码码未激活</view>
 </view>
@@ -17,6 +16,16 @@
 
 <view class='btns' wx:if='{{codeType==1}}'>
     <view class='btn btn0' catchtap='deleteCode'>删除体验码</view>
+</view>
+
+<view class='section-carinfo' wx:if='{{codeType==2}}'>
+    <text>{{licenseplate}}</text>
+    <text>{{mobile}}</text>
+</view>
+
+<view class="section-switch" wx:if='{{codeType==2}}'>
+    <switch checked="{{status==1?true:false}}" bindchange="switchChangeStatus"/>
+    <text>注：关闭后，您将收不到电话和短信通知</text>
 </view>
 
 <view class='cont-customer-telephone'>

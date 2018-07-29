@@ -81,6 +81,7 @@ Page({
 
                 if (res.statusCode == 200 && res.data.code == 3023) {
                     that.setData({ mianDarao: true }); 
+                    that.setData({ btnDisabled: false }); 
                     wx.showModal({
                         title: '免打扰模式',
                         content: '该车主已开启免打扰模式',
@@ -231,27 +232,20 @@ Page({
     /* 拨打匿名电话 */
     nimingPhoneCall: function () {
         const that = this;
-        if (!that.data.btnDisabled) {
+        if (!that.data.btnDisabled && !that.data.mianDarao) {
             wx.loading();
             let phoneNumber = that.data.mobile;
             //console.log(phoneNumber);
-            setTimeout(function () {
-                wx.makePhoneCall({
-                    phoneNumber: phoneNumber,
-                    complete: function () {
-                        wx.loading('close');
-                    }
-                });
-                wx.loading('close');
-            }, 500);
+            wx.makePhoneCall({
+                phoneNumber: phoneNumber,
+                complete: function () {
+                    wx.loading('close');
+                }
+            });
+            wx.loading('close');
         }
-    },
-    /* 免打扰的情况下点击按钮 */
-    noPass: function () {
-        const that = this;
-        if (that.data.mianDarao) {
+        if (!that.data.btnDisabled && that.data.mianDarao){
             wx.loading();
-
             let options = that.data.options;
             let newcommon = new common();
             let param = newcommon.data;
@@ -261,7 +255,6 @@ Page({
             let key = sceneArray[1];
             //let key = 'key15325253649665';//已经激活的key，可以直接匿名打电话调起拨号界面
             //let key = 'key15305214887384';//正式未激活的挪车码，但是还未绑定
-
             param.key = key;
             param.sign = md5.hexMD5(that.data.authorization + param.request_time + 'reminduserinfo' + 'jo8LJjY4T9');
             param.url = newcommon.apiurl + 'index/index/reminduserinfo';
@@ -276,10 +269,17 @@ Page({
                     });
                     return false;
                 }
-            },function(){    
-            },function () {
+            }, function () {
+            }, function () {
                 wx.loading('close');
             });
+        }
+    },
+    /* 免打扰的情况下点击按钮 */
+    noPass: function () {
+        const that = this;
+        if (that.data.mianDarao) {
+
         }
     },
     /* 激活体验码按钮 */
