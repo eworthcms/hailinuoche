@@ -29,6 +29,6 @@
 </view>
 
 <view class='cont-customer-telephone'>
-    客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='18514820511'><text>185</text>14820511</text>
+    客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='‭(010) 5924 3995'>‭(010) 5924 3995</text>
 </view>
 

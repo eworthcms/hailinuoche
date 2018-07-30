@@ -16,7 +16,7 @@
 <view class='section-step'>
     <view class='msg'>本服务由海狸车服提供服务</view>
     <view class='telephone'>
-        客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='18514820511'>18514820511</text>
+        客服电话：<text class='text' catchtap='makePhoneCall' data-phonenumber='‭(010) 5924 3995'>‭(010) 5924 3995</text>
     </view>
 </view>
  
