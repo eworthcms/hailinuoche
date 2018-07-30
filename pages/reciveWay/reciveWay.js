@@ -2,7 +2,7 @@
 const app = getApp();
 const md5 = require('../../utils/md5.js');
 const common = require('../../utils/common.js');
-const initPrice = 25.9;
+const initPrice = 9.9;
 Page({
     data: {
         buyNumber: 1,
