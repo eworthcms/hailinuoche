@@ -149,7 +149,7 @@ Page({
             return false;
         }
         wx.showModal({
-            title: '确定激活次挪车码？',
+            title: '确定激活此挪车码？',
             content: '手机号：' + that.data.phoneNumber + '\r\n车牌号：' + carNumber,
             success: function (res) {
                 if (res.confirm) {
